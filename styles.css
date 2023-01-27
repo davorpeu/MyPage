@@ -1,0 +1,23 @@
+@import url("./style/fonts/century-gothic-paneuropean/CenturyGothicPaneuropeanRegular.ttf");
+html {
+  background-color: #346272;
+  color: #ffffff;
+  font-family: "century-gothic-paneuropean", sans-serif;
+}
+html header {
+  padding: 20px;
+}
+html nav ul {
+  list-style-type: none;
+}
+html nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+html nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+html nav ul li a:hover {
+  color: #000;
+}/*# sourceMappingURL=styles.css.map */
