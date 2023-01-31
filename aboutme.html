@@ -1,36 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>O Meni</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="js/main.js"></script>
 
-</head>
-<body>
+  </head>
+  <body>
+    
     <header>
+      <nav>
+        <ul class="header">
+          <li><a href="index.html">Naslovna</a></li>
+          <li class="divider"></li>
+          <li><a href="myTown.html">Moj Grad</a></li>
+          <li class="divider"></li>
+          <li class="current"><a href="aboutMe.html">O Meni</a></li>
+          <li class="divider"></li>
+          <li><a href="gallery.html">Galerija</a></li>
+          <li class="divider"></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="sidebar">
         <nav>
-          <ul class="header">
-            <li><a href="index.html">Home Page</a></li>
-            <li><a  href="mytown.html">Moj Grad</a></li>
-            <li class="current"><a href="aboutme.html">O Meni</a></li>
-            <li><a href="gallery.html">Gallerija</a></li>
+          <ul>
+            <li><a href="myTown.html">Moj Grad</a></li>
+            <li><a href="aboutMe.html">O Meni</a></li>
+            <li><a href="gallery.html">Galerija</a></li>
             <li><a href="contact.html">Kontakt</a></li>
           </ul>
         </nav>
-      </header>
-    <div class="about-me-container">
-        <h1>About Me</h1>
-        <img class="profile-picture" src="src\images\profile.jpg" alt="Profile Picture">
-        <p>My name is Davor Peurača and I am a web developer. I have experience in creating responsive and user-friendly websites using HTML, CSS, and JavaScript. I am passionate about creating beautiful and engaging designs that provide a great user experience.</p>
-        <div class="image-container">
-          <img class="animated-image" src="src\images\profile.jpg" alt="animated image">
-          <img class="animated-image" src="src\images\profile.jpg" alt="animated image">
-          <img class="animated-image" src="src\images\profile.jpg" alt="animated image">
-        </div>
-        <p>I have a keen eye for detail and I enjoy experimenting with new technologies and design trends. I am always looking for new challenges and opportunities to improve my skills and create amazing websites.</p>
       </div>
-      
-</body>
+    </header>
+    <div class="about-me-container">
+      <h1 class="title">About Me</h1>
+  
+      <div class="image-container slider">
+        <img
+          class="animated-image slide active"
+          src="src\images\headshot.jpg"
+          alt="animated image"
+        />
+        <img
+          class="animated-image slide"
+          src="src\images\profile.jpg"
+          alt="animated image"
+        />
+        <img
+          class="animated-image slide"
+          src="src\images\profile.jpg"
+          alt="animated image"
+        />
+      </div>
+      <p class="text-focus-in">
+        My name is Davor Peurača and I am a web developer. I have experience in
+        creating responsive and user-friendly websites using HTML, CSS, and
+        JavaScript. I am passionate about creating beautiful and engaging
+        designs that provide a great user experience.
+      </p>
+      <p class="text-focus-in">
+        I have a keen eye for detail and I enjoy experimenting with new
+        technologies and design trends. I am always looking for new challenges
+        and opportunities to improve my skills and create amazing websites.
+      </p>
+      <div class="kenburns-bottom-left">
+        <!-- Add content here -->
+      </div>
+    </div>
+    
+    <footer>
+      <p>
+        MOJA STRANICA. All Rights Reserved &copy;
+        <span id="current-date"></span>
+      </p>
+    </footer>
+  </body>
 </html>
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(function () {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 2000);
+</script>
+<style>
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+  }
+</style>

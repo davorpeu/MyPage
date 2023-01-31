@@ -3,41 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
     <link rel="stylesheet" type="text/css" href="styles.css" />
-
-    <title>My Website</title>
+    <script src="js/main.js"></script>
+    <title>Moja Stranica</title>
   </head>
   <body>
     <header>
       <nav>
         <ul class="header">
-          <li><a href="mytown.html">Moj Grad</a></li>
-          <li><a href="aboutme.html">O Meni</a></li>
-          <li><a href="gallery.html">Gallerija</a></li>
+          <li><a href="myTown.html">Moj Grad</a></li>
+          <li class="divider"></li>
+          <li><a href="aboutMe.html">O Meni</a></li>
+          <li class="divider"></li>
+          <li><a href="gallery.html">Galerija</a></li>
+          <li class="divider"></li>
           <li><a href="contact.html">Kontakt</a></li>
         </ul>
       </nav>
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="myTown.html">Moj Grad</a></li>
+            <li><a href="aboutMe.html">O Meni</a></li>
+            <li><a href="gallery.html">Galerija</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-
-    <!-- Home Page Content -->
-    <h1>Welcome to my website</h1>
-    <p>This is the home page of my website.</p>
-
-    <!-- My Town Content -->
-    <h1>My Town</h1>
-    <p>Information about my town goes here.</p>
-
-    <!-- About Me Content -->
-    <h1>About Me</h1>
-    <p>Information about me goes here.</p>
-
-    <!-- Gallery Content -->
-    <h1>Gallery</h1>
-    <p>Images and videos of my town go here.</p>
-
-    
+    <div class="hero-segment">
+      <h1 class="giant-title">MOJA STRANICA</h1>
+    </div>
+    <footer>
+      <p>
+        MOJA STRANICA. All Rights Reserved &copy;
+        <span class="current-date"></span>
+      </p>
+    </footer>
   </body>
 </html>

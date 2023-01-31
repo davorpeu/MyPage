@@ -1,0 +1,41 @@
+.container {
+  .row {
+    .col {
+      max-height: 20vh;
+      padding: 5vh 10px;
+      h2 {
+        width: fit-content;
+        margin: auto;
+        font-weight: 100;
+        font-size: 12px;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        padding-bottom: 2rem;
+      }
+      h2::after {
+        content: "";
+        display: block;
+        width: 4rem;
+        margin: auto;
+        margin-top: 7px;
+        height: 1px;
+        background-color: #ffffff;
+      }
+      h2 {
+        text-align: center;
+      }
+      ul {
+        list-style: disc;
+        text-align: center;
+        padding: 0;
+        width: fit-content;
+        margin: auto;
+        li {
+          font-size: 12px;
+          letter-spacing: 0.1rem;
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+}
