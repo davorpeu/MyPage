@@ -9,72 +9,87 @@
     <script src="js/main.js"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul class="header">
-          <li><a href="index.html">Naslovna</a></li>
-          <li class="divider"></li>
-          <li><a href="myTown.html">Moj Grad</a></li>
-          <li class="divider"></li>
-          <li><a href="aboutMe.html">O Meni</a></li>
-          <li class="divider"></li>
-          <li class="current"><a href="gallery.html">Galerija</a></li>
-          <li class="divider"></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-      <div class="sidebar">
-        <nav>
-          <ul>
-            <li><a href="myTown.html">Moj Grad</a></li>
-            <li><a href="aboutMe.html">O Meni</a></li>
-            <li><a href="gallery.html">Galerija</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <header></header>
     <div class="images-container">
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-02.jpg" alt="image 1" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-02.jpg"
+          alt="image 1"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 2" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 2"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 3" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 3"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 4" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 4"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 5" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 5"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 6" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 6"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 7" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 7"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 8" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 8"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 9" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 9"
+        />
       </div>
       <div class="image-box">
-        <img onclick="openModal(this)" src="https://animista.net/images/venezia-bw-square-03.jpg" alt="image 10" />
+        <img
+          onclick="openModal(this)"
+          src="https://animista.net/images/venezia-bw-square-03.jpg"
+          alt="image 10"
+        />
       </div>
     </div>
     <div id="modal" class="modal">
       <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modal-img">
+      <img class="modal-content" id="modal-img" />
+
+      <a id="prev" onclick="prevImage()">&#10094;</a>
+      <a id="next" onclick="nextImage()">&#10095;</a>
     </div>
+
     <footer>
       <p>
         MOJA STRANICA. All Rights Reserved &copy;
@@ -83,55 +98,102 @@
     </footer>
   </body>
   <script>
+    let currentIndex = 0;
+    let images = document.querySelectorAll("img");
+
     function openModal(img) {
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    modal.style.display = "block";
-    modalImg.src = img.src;
-  }
-  
-  function closeModal() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "none";
-  }
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modal-img");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      modal.style.display = "none";
+    }
+
+    function prevImage() {
+    
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      document.getElementById("modal-img").src = images[currentIndex].src;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById("modal-img").src = images[currentIndex].src;
+    }
   </script>
 </html>
 <style>
+  #prev,
+  #next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 1;
+  }
+
+  #prev:hover,
+  #next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+
+  #prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  #next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+  }
+
   .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
-}
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
 </style>

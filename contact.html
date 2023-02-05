@@ -7,60 +7,28 @@
     <title>Kontakt</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="js/main.js"></script>
-
   </head>
   <body>
-    <header>
-      <nav>
-        <ul class="header">
-          <li><a href="index.html">Naslovna</a></li>
-          <li class="divider"></li>
-          <li><a href="myTown.html">Moj Grad</a></li>
-          <li class="divider"></li>
-          <li><a href="aboutMe.html">O Meni</a></li>
-          <li class="divider"></li>
-          <li><a href="gallery.html">Galerija</a></li>
-          <li class="divider"></li>
-          <li class="current"><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-      <div class="sidebar">
-        <nav>
-          <ul>
-            <li><a href="myTown.html">Moj Grad</a></li>
-            <li><a href="aboutMe.html">O Meni</a></li>
-            <li><a href="gallery.html">Galerija</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <header></header>
     <!-- Contact Form -->
     <div class="contact-container">
       <h1 class="title">Kontaktirajte me</h1>
-      <form class="contact" method="post">
-        <label for="name">Ime:</label>
-        <input type="text" id="name" name="name" /><br />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"  required /><br />
-        <label for="message">Poruka:</label>
-        <textarea id="message" name="message"></textarea><br />
-        <input type="text" name="human" style="display: none"  required />
+      <form class="contact" method="post" action="submit.php">
+        <input type="text" placeholder="Ime" id="name" name="name" /><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        /><br />
+        <textarea id="message" placeholder="Poruka" name="message"></textarea
+        ><br />
         <div id="captchaContainer" class="captchaContainer">
           <div id="captchaText">5 + 3 =</div>
           <input type="text" id="captchaInput" class="captchaInput" required />
         </div>
-        <input
-          class="formButton"
-          type="button"
-          
-          value="Submit"
-        />
+        <input class="formButton" type="submit" value="Pošalji" />
       </form>
     </div>
 
@@ -75,7 +43,7 @@
 <script>
   const form = document.querySelector(".formButton");
   const captchaInput = document.querySelector(".captchaInput");
- 
+
   form.addEventListener("click", function (event) {
     const correctAnswer = 5 + 3;
 

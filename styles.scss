@@ -1,5 +1,10 @@
-@import url("./style/fonts/century-gothic-paneuropean/CenturyGothicPaneuropeanRegular.ttf");
-@import url("./style/fonts/century-gothic-paneuropean/");
+@font-face {
+  font-family: 'Century Gothic Paneuropean';
+  src: url('./style/fonts/century-gothic-paneuropean/CenturyGothicPaneuropeanRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "style/aboutMe.scss";
 @import "style/contact.scss";
 @import "style/gallery.scss";
@@ -85,6 +90,10 @@ nav {
       border-left: 1px solid white;
       padding: 0 5px 0 5px;
     }
+    @media screen and (max-width: 1000px) {
+      margin-right: 10px;
+      
+    }
   }
   a {
     text-decoration: none;
@@ -103,9 +112,10 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   display: grid;
+  margin: auto;
+  max-width: fit-content;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-
   min-height: calc(100vh - #{$headerPx} - #{$footerPx});
 
   .row {
@@ -113,7 +123,7 @@ nav {
     width: fit-content;
     margin: auto;
   }
-  
+
   @media (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
     height: auto;
@@ -139,9 +149,17 @@ footer {
   color: #f0f0f0;
   text-align: center;
   bottom: 0;
-  width: -webkit-fill-available;
-  font-size: 8px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 24px;
   letter-spacing: 0.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    font-size: 10px;
+    line-height: 20px;
+  }
 }
 
 .hamburger-menu {
@@ -167,7 +185,6 @@ footer {
 .change .bar:first-child {
   transform: rotate(-45deg) translate(-10px, 6px);
   background-color: #333333;
-
 }
 
 .change .bar:nth-child(2) {
@@ -228,5 +245,3 @@ footer {
 .visible {
   display: block;
 }
-
-

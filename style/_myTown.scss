@@ -1,8 +1,8 @@
 .container {
   .row {
     .col {
-      max-height: 20vh;
       padding: 5vh 10px;
+
       h2 {
         width: fit-content;
         margin: auto;
@@ -11,7 +11,9 @@
         letter-spacing: 0.2rem;
         text-transform: uppercase;
         padding-bottom: 2rem;
+        text-align: center;
       }
+
       h2::after {
         content: "";
         display: block;
@@ -21,9 +23,7 @@
         height: 1px;
         background-color: #ffffff;
       }
-      h2 {
-        text-align: center;
-      }
+
       ul {
         list-style: disc;
         text-align: center;
