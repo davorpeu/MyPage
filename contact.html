@@ -13,7 +13,7 @@
     <!-- Contact Form -->
     <div class="contact-container">
       <h1 class="title">Kontaktirajte me</h1>
-      <form class="contact" method="post" action="submit.php">
+      <form class="contact" method="POST" action="submit.php">
         <input type="text" placeholder="Ime" id="name" name="name" /><br />
         <input
           type="email"
@@ -22,7 +22,7 @@
           placeholder="Email"
           required
         /><br />
-        <textarea id="message" placeholder="Poruka" name="message"></textarea
+        <textarea id="message" class="message" placeholder="Poruka" name="message"></textarea
         ><br />
         <div id="captchaContainer" class="captchaContainer">
           <div id="captchaText">5 + 3 =</div>

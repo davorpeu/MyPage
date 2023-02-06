@@ -2,12 +2,18 @@ $footerPx: 10vh;
 $headerPx: 5vh;
 .contact-container {
   min-height: calc(100vh - #{$headerPx} - #{$footerPx});
+
 }
 .contact {
   margin: auto;
   display: flex;
   flex-direction: column;
   width: fit-content;
+  width: 80%;
+  .message{
+    height: 30vh;
+  }
+
 }
 .title {
   margin: auto;
@@ -19,64 +25,63 @@ $headerPx: 5vh;
 }
 
 @media only screen and (max-width: 767px) {
-.contact-container {
-  min-height: auto;
-}
-.contact {
-  width: 80%;
-}
-.title {
-  font-size: 1.5rem;
-}
-}
-  
-  form {
-    width: 500px;
-    margin: 50px auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
+  .contact-container {
+    min-height: auto;
   }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+  .contact {
+    width: 80%;
   }
-  
-  input.formButton {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 18px;
-    background-color: #347263;
-    color: #fff;
-    border: none;
-    letter-spacing: 0.1rem;
-    border-radius: 5px;
-    cursor: pointer;
+  .title {
+    font-size: 1.5rem;
   }
-  
-  input.formButton:hover {
-    background-color: #5ac3a9;
-    color: rgb(0, 0, 0);
+}
 
-  }
-  .captchaContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
-  
-  .captchaInput {
-    width: 20% !important;
-    margin-top: auto !important;
-  }
+form {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input.formButton {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  border: none;
+  background-color: #5ac3a9;
+  color: rgb(0, 0, 0);
+  letter-spacing: 0.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input.formButton:hover {
+  background-color: #347263;
+  color: #fff;
+}
+.captchaContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.captchaInput {
+  width: 20% !important;
+  margin-top: auto !important;
+}
