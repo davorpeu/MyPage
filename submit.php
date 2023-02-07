@@ -5,7 +5,7 @@ ini_set('display_errors', '1');
 // Connect to XAMPP MySQL database
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "email";
 
 // Create connection
@@ -34,6 +34,6 @@ mysqli_stmt_close($stmt);
 mysqli_close($conn);
 
 // Redirect to form page
-header("Location: contact.html");
+header("Location: contact.php?success=1");
 
 ?>
