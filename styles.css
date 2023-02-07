@@ -21,7 +21,6 @@
   line-height: 24px;
 }
 .about-me-container .text-focus-in {
-  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 .about-me-container .image-container {
@@ -50,7 +49,6 @@
   opacity: 0.5;
   left: 0;
   bottom: 0;
-  -webkit-animation: kenburns-bottom-left 5s ease-out both;
   animation: kenburns-bottom-left 5s ease-out both;
 }
 
@@ -60,16 +58,6 @@
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
-@-webkit-keyframes kenburns-bottom-left {
-  0% {
-    transform: scale(1) translate(0, 0);
-    transform-origin: 16% 84%;
-  }
-  100% {
-    transform: scale(1.25) translate(-20px, 15px);
-    transform-origin: left bottom;
-  }
-}
 @keyframes kenburns-bottom-left {
   0% {
     transform: scale(1) translate(0, 0);
@@ -78,16 +66,6 @@
   100% {
     transform: scale(1.25) translate(-20px, 15px);
     transform-origin: left bottom;
-  }
-}
-@-webkit-keyframes text-focus-in {
-  0% {
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    filter: blur(0);
-    opacity: 1;
   }
 }
 @keyframes text-focus-in {
@@ -108,7 +86,6 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   width: 80%;
@@ -149,7 +126,7 @@ input[type=email],
 textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -188,6 +165,37 @@ input.formButton:hover {
   margin-top: auto !important;
 }
 
+.success_message {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeOut 2s forwards;
+}
+.success_message.show {
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .images-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -241,7 +249,6 @@ input.formButton:hover {
   padding: 5vh 10px;
 }
 .container .row .col h2 {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
@@ -265,7 +272,6 @@ input.formButton:hover {
   list-style: disc;
   text-align: center;
   padding: 0;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
@@ -274,6 +280,20 @@ input.formButton:hover {
   font-size: 12px;
   letter-spacing: 0.1rem;
   padding: 5px 0;
+}
+
+.email_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.email_table th, .email_table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+.email_table th {
+  background-color: #dddddd;
+  color: #000;
 }
 
 @media (max-width: 600px) {
@@ -332,7 +352,6 @@ nav li {
   display: inline-block;
   margin-right: 20px;
   font-size: 12px;
-  min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
@@ -362,7 +381,6 @@ nav a:hover {
   flex-wrap: wrap;
   display: grid;
   margin: auto;
-  max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
   grid-template-columns: repeat(3, 1fr);
@@ -371,7 +389,6 @@ nav a:hover {
 }
 .container .row {
   margin-top: 10%;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;

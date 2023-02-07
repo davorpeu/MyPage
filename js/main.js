@@ -17,7 +17,7 @@ function setHeaderFooterContent() {
     <li class="divider"></li>
     <li><a href="gallery.html">Galerija</a></li>
     <li class="divider"></li>
-    <li><a href="contact.html">Kontakt</a></li>
+    <li><a href="contact.php">Kontakt</a></li>
   </ul>
 </nav>
 <div class="hamburger-menu">
@@ -33,7 +33,7 @@ function setHeaderFooterContent() {
       <li><a href="myTown.html">Moj Grad</a></li>
       <li><a href="aboutMe.html">O Meni</a></li>
       <li><a href="gallery.html">Galerija</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
+      <li><a href="contact.php">Kontakt</a></li>
     </ul>
   </nav>
 </div>
